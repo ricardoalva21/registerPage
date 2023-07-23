@@ -23,37 +23,38 @@ const tipoDeErrores = [
 
 const mensajesDeError = {
   nombre: {
-    valueMissing: "El campo nombre no puede estar vacío",
+    valueMissing: "El campo nombre no puede estar vacío.",
   },
   email: {
-    valueMissing: "El campo correo no puede estar vacío",
-    typeMismatch: "El correo no es válido",
+    valueMissing: "El campo correo no puede estar vacío.",
+    typeMismatch: "El correo no es válido.",
   },
   password: {
-    valueMissing: "El campo contraseña no puede estar vacío",
+    valueMissing: "El campo contraseña no puede estar vacío.",
     patternMismatch:
       "Al menos 6 caracteres, máximo 12, debe contener una letra minúscula, una letra mayúscula, un número y no puede contener caracteres especiales.",
   },
   nacimiento: {
-    valueMissing: "Este campo no puede estar vacío",
-    customError: "Debes tener al menos 18 años de edad",
+    valueMissing: "Este campo no puede estar vacío.",
+    customError: "Debes tener al menos 18 años de edad.",
   },
   numero: {
-    valueMissing: "Este campo no puede estar vacío",
-    patternMismatch: "El formato requerido es XXXXXXXXXX 10 números",
+    valueMissing: "Este campo no puede estar vacío.",
+    patternMismatch: "El formato requerido es : XXXXXXXXXX 10 numeros."
   },
   direccion: {
     valueMissing: "Este campo no puede estar vacío",
-    patternMismatch: "La dirección debe contener entre 10 a 40 caracteres.",
+    patternMismatch: "La dirección debe contener entre 10 a 40 caracteres."
   },
   ciudad: {
     valueMissing: "Este campo no puede estar vacío",
-    patternMismatch: "La ciudad debe contener entre 10 a 40 caracteres.",
+    patternMismatch: "La ciudad debe contener entre 7 a 15 caracteres."
   },
   estado: {
     valueMissing: "Este campo no puede estar vacío",
-    patternMismatch: "El estado debe contener entre 10 a 40 caracteres.",
+    patternMismatch: "La estado debe contener entre 7 a 15 caracteres."
   },
+  
 };
 
 const validadores = {
@@ -64,9 +65,9 @@ function mostrarMensajeDeError(tipoDeInput, input) {
   let mensaje = "";
   tipoDeErrores.forEach((error) => {
     if (input.validity[error]) {
-      console.log(tipoDeInput, error);
-      console.log(input.validity[error]);
-      console.log(mensajesDeError[tipoDeInput][error]);
+      // console.log(tipoDeInput, error);
+      // console.log(input.validity[error]);
+      // console.log(mensajesDeError[tipoDeInput][error]);
       mensaje = mensajesDeError[tipoDeInput][error];
     }
   });
